@@ -1,10 +1,8 @@
 import { galleryItems } from './gallery-items.js';
 // Change code below this line
-
 const galleryElements = document.querySelector('.gallery');
 
 
-// Формуємо розмітку галереї на основі масиву даних
 const createGalleryMarkup = galleryItems => {
     return galleryItems
     .map(({ preview, original, description }) => {
@@ -16,18 +14,11 @@ const createGalleryMarkup = galleryItems => {
     .join('');
 };
 
-// Рендеримо розмітку галереї
 galleryElements.insertAdjacentHTML('beforeend', createGalleryMarkup(galleryItems));
 
-const lightbox = new SimpleLightbox('.gallery a', {
-    overlayOpacity: 0.5,
-    captionDelay: 250,
-    captionsData: 'alt',
-    fadeSpeed: 250,
-    rtl: true,
+const lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionDelay: 250,
 });
-
-
-// -----------------------------------
 
 console.log(galleryItems);
